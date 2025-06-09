@@ -125,10 +125,10 @@ class EscapeRoomGUI:
 >> THE TRUTH AWAITS OUTSIDE <
         """
         
-            # Configure center alignment tag
+            # Configure center alignment
         self.text_display.tag_configure("center", justify='center')
         
-        # Insert title with center tag
+        # Insert title with center
         start_pos = self.text_display.index(tk.INSERT)
         self.text_display.insert(tk.END, title_art)
         end_pos = self.text_display.index(tk.INSERT)
@@ -161,7 +161,7 @@ class EscapeRoomGUI:
                            "'check [item]' to inspect an item, 'use [inventory item] on [item]' to use an item, \n"
                            "or 'exit' to quit the game.\n\n")
     
-    def slow_print(self, text, delay=0.03):
+    def slow_print(self, text, delay=0.035):
         self.is_typing = True
         self.input_entry.config(state='disabled')
         self.submit_button.config(state='disabled')
@@ -451,7 +451,7 @@ class EscapeRoomGUI:
         return False
 
     def check_letter(self):
-        if letter in self.inventory:
+        if "letter" in self.inventory:
             self.slow_print(f"Aku telah gagal melindungi Indonesia dari ancaman perang, suaraku tidak didengar sama sekali.\n"
                             "Diam di sini pun rasanya percuma, aku hanya melindungi diriku sendiri sedangkan di luar sana telah hancur,\n"
                             "Persediaan makanan juga sudah mau habis. Daripada aku mati kelaparan, lebih baik aku akhiri diriku lebih dahulu.\n"
